@@ -17,7 +17,6 @@ namespace WebFM_Style.Controllers
         public INotyfService _notyfService { get; }  private readonly IVnPayService _vnPayService;
         public OrdersController(FmStyleDbContext context, INotyfService notyfService,IVnPayService vnPayService)
         {
-
             _context = context;
             _notyfService = notyfService;
            _vnPayService = vnPayService;
