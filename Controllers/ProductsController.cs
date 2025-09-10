@@ -111,7 +111,6 @@ namespace WebFM_Style.Controllers
             {
                 return NotFound(new { message = "Sản phẩm không tồn tại" });
             }
-
             return Ok(product);
         }
 
@@ -136,7 +135,6 @@ namespace WebFM_Style.Controllers
                 _notyfService.Warning("Bạn chưa có sản phẩm nào trong giỏ hàng");
 
                 return RedirectToAction("Index", "Home");
-
             }
             var addresses = _context.Addresses
                 .Where(x => x.AccountId == int.Parse(maKH))
@@ -159,7 +157,6 @@ namespace WebFM_Style.Controllers
         }
         public IActionResult CheckOut(string pay, int Address)
         {
-
             return View();
         }
     }
