@@ -41,16 +41,13 @@ namespace WebFM_Style.Helper
             {
                 data.Append(WebUtility.UrlEncode(key) + "=" + WebUtility.UrlEncode(value) + "&");
             }
-
             var querystring = data.ToString();
-
             baseUrl += "?" + querystring;
             var signData = querystring;
             if (signData.Length > 0)
             {
                 signData = signData.Remove(data.Length - 1, 1);
             }
-
             var vnpSecureHash = Utils.HmacSHA512(vnpHashSecret, signData);
             baseUrl += "vnp_SecureHash=" + vnpSecureHash;
 
@@ -111,7 +108,6 @@ namespace WebFM_Style.Helper
                     hash.Append(theByte.ToString("x2"));
                 }
             }
-
             return hash.ToString();
         }
 
